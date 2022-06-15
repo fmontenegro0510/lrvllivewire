@@ -69,12 +69,13 @@
               </div>
               <!-- /Logo -->
               <h4 class="mb-2">👋 Hola!</h4>
-              <h5 class="mb-4">Bienvenido al sistema de Postulantes</h5>
+              <h5 class="mb-4">Bienvenido al Sistema de Postulantes</h5>
 
               <form  id="formAuthentication" class="mb-3"  action="{{ route('login')  }}" method="POST">
                 @csrf
                 <div class="mb-3">
-                  <label for="email" class="form-label">{{ __('Email Address') }}</label>
+                  {{-- <label for="email" class="form-label">{{ __('Email Address') }}</label> --}}
+                  <label for="email" class="form-label">Email</label>
                   <input 
                   id="email" 
                   type="email" 
@@ -93,10 +94,12 @@
 
                 <div class="mb-3 form-password-toggle">
                   <div class="d-flex justify-content-between">
-                    <label class="form-label" for="password">{{ __('Password') }}</label>
+                    {{-- <label class="form-label" for="password">{{ __('Password') }}</label> --}}
+                    <label class="form-label" for="password">Contraseña</label>
                     @if (Route::has('password.request'))
                     <a href="{{ route('password.request') }}">
-                      <small>{{ __('Forgot Your Password?') }}</small>
+                      {{-- <small>{{ __('Forgot Your Password?') }}</small> --}}
+                      <small>Olvide mi password...</small>
                     </a>
                     @endif
                   </div>
@@ -123,19 +126,19 @@
                 <div class="mb-3">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                    <label class="form-check-label" for="remember-me"> {{ __('Remember Me') }} </label>
+                    {{-- <label class="form-check-label" for="remember-me"> {{ __('Remember Me') }} </label> --}}
+                    <label class="form-check-label" for="remember-me"> Recordar mis credenciales de acceso</label>
                   </div>
                 </div>
                 <div class="mb-3">
-                  <button class="btn btn-primary d-grid w-100" type="submit">{{ __('Login') }}</button>
-
-
+                  {{-- <button class="btn btn-primary d-grid w-100" type="submit">{{ __('Login') }}</button> --}}
+                  <button class="btn btn-primary d-grid w-100" type="submit">INGRESAR</button>
 
                 </div>
               </form>
               <!-- Link Crear Cuenta de Usuario -->
               <p class="text-center">
-                <span>No tienes una cuenta de Usuario?</span>
+                <span>No tenes una cuenta de Usuario?</span>
                 @if (Route::has('register'))
                 <a href="{{ route('register') }}">Create una</a>
                 @endif
